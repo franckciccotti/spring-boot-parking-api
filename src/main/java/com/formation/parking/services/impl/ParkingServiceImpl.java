@@ -29,6 +29,7 @@ public class ParkingServiceImpl implements ParkingService {
         List<Parking> resultat = new ArrayList<>();
         /*for (RecordEntity record : reponse.getRecords()) {
             Parking parking = new Parking();
+            parking.setIdentifiant(Integer.parseInt(record.getFields().getIdObj()));
             parking.setNom(record.getFields().getGrpNom());
             //parking.setStatut(record.getFields().getGrpStatut());
             parking.setStatut(getLibelleStatut(record));
@@ -40,6 +41,7 @@ public class ParkingServiceImpl implements ParkingService {
         }*/
         for (ResultsEntity result : reponse.getResults()) {
             Parking parking = new Parking();
+            parking.setIdentifiant(Integer.parseInt(result.getGrpIdentifiant()));
             parking.setNom(result.getGrpNom());
             parking.setStatut(result.getGrpStatut());
             parking.setStatut(getLibelleStatut(result));
